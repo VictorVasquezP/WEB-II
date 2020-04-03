@@ -1,0 +1,72 @@
+extends layout
+
+block content
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/funciones.js")
+    script(src="/javascripts/search.js")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    script(src="https://kit.fontawesome.com/a076d05399.js")
+    //-import for table
+    
+    link(rel="stylesheet", href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css")
+    script(src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js")
+    div(class="container")
+      hr
+      center
+        h1 #{title}
+      input(type="checkbox" id="check")
+      label(for="check")
+        i(class="fas fa-bars" id="btn")
+        i(class="fas fa-times" id="cancel")
+      div(class="sidebar")
+          header Funciones
+          ul
+            li
+                a(href="/")
+                    i(class="fa fa-home")
+            li
+                a(href="/estudiante/registro")
+                    i(class="fas fa-user-plus")
+            li  
+                a(href="/estudiante/buscar" )
+                    i(class="fas fa-search")
+            li  
+                a(href="/estudiante/eliminar")
+                    i(class="fas fa-user-times")
+            li  
+                a(href="/estudiante/actualizar")
+                    i(class="fas fa-pen-square")
+      hr
+      section
+        ul(id="campos")
+          li
+            select(id="serOpcion" onChange="ocultar()")
+              option(value="1" ) Por Escuela
+              option(value="2" ) Por Municipio
+              option(value="3" ) Por Promedio
+          li
+              div(class="row")
+                input(class="form-control" id="datoEscuela" type="text" placeholder="Ingrese escuela a buscar")
+                div(class="col-md-6")
+                  input(class="form-control" id="datoMunicipio" type="text" placeholder="Municipio")
+                  select(id="orden")
+                      option(value="mayor") Mayor
+                      option(value="menor") Menor
+                      option(value="igual") Igual
+                div(class="col-md-6")
+                  input(class="form-control" id="datoColonia" type="text" placeholder="Colonia")
+                  input(class="form-control" id="datoPromedio" type="number" placeholder="Promedio")
+                
+          li
+            button(class="btn btn-success" id="buscar") Buscar
+        br
+        //-La busqueda por apellido pasarla a updateData
+        section
+          div(class="table")
+            table(class="table table-striped table-info table-hover" id="tablaB")
+              thead(class="thead-dark" id="thead")
+                
+              tbody(id="tabla")
+      
+      

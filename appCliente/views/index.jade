@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  script(src="/javascripts/jquery.js")
+  script(src="/javascripts/funcionIndex.js")
+  link(rel="stylesheet", href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css")
+  script(src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js")
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+  script(src="https://kit.fontawesome.com/a076d05399.js")
+  div(class="container")
+    center
+      h1 #{title}
+    input(type="checkbox" id="check")
+    label(for="check")
+      i(class="fas fa-bars" id="btn")
+      i(class="fas fa-times" id="cancel")
+    div(class="sidebar")
+        header Funciones
+        ul
+          li
+              a(href="/")
+                  i(class="fa fa-home")
+          li
+              a(href="/estudiante/registro")
+                  i(class="fas fa-user-plus")
+          li  
+              a(href="/estudiante/buscar" )
+                  i(class="fas fa-search")
+          li  
+              a(href="/estudiante/eliminar")
+                  i(class="fas fa-user-times")
+          li  
+              a(href="/estudiante/actualizar")
+                  i(class="fas fa-pen-square")
+    hr
+    section
+      center
+        h2 Listar Estudiantes
+      div(class="table")
+        table(class="table table-info table-hover" id="tablaI")
+          thead(class="thead-dark")
+            tr
+              th Id
+              th Nombre
+              th Apellido Paterno
+              th Apellido Materno
+              th Estatuss
+          tbody(id="tablaIndex")
+
+
+
+    
+      
+ 
+    

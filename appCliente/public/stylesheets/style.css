@@ -1,0 +1,225 @@
+.nav-link{
+    font-size: 1.02em;
+    color: #5e4905;
+    padding-bottom: 2px;
+    text-decoration:none;
+}
+#tabs_a li:hover, #tabs_a a:hover{
+    background-color: rgb(1, 7, 78) !important;
+    color: white !important;
+}
+#tabs_a li a{
+    background-color: rgb(171, 208, 214) !important;
+    color: rgb(59, 37, 37) !important;
+}
+
+fieldset{
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    
+    text-align: center;
+}
+legend{
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    border:none !important;
+    width:280px !important;
+    color:rgb(55, 157, 252) !important;
+}
+.boton {
+    border: none;
+    background: #404040;
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 1px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.boton:hover {
+    color: #404040 !important;
+    font-weight: 50 !important;
+    letter-spacing: 3px;
+    background: none;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+#campos{
+    margin-left: 10%;
+}
+#campos li{
+    display: inline-block;
+    padding-left: 5%;
+}
+#orden, #delOpcion{
+    margin-top: 6px;
+}
+h1, h2, h3{
+  color: rgb(17, 8, 34) !important;
+}
+
+/* css add  */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('/images/fondo.jpg') repeat;
+  
+}
+.sidebar {
+  position: absolute;
+  left: -255px;
+  width: 255px;
+  height: 61%;
+  background: #202e35;
+  transition: all .5s ease;
+}
+
+.table{
+    width: 95% !important;
+}
+.sidebar header {
+  font-size: 20px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #063146;
+  user-select: none;
+  
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left:40%;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+.sidebar ul li:hover a{
+  padding-left: 60%;
+  color: aqua;
+  text-decoration: none;
+}
+.sidebar ul a i{
+  margin-right: 1px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #042331;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #1f3c4b;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 160px;
+}
+section{
+
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  transition: all .5s;
+  
+}
+@media only screen and (max-width: 1300px) {
+  .sidebar {
+    position: absolute;
+    left: -255px;
+    width: 255px;
+    height: 67%;
+    background: #202e35;
+    transition: all .5s ease;
+  }
+}
+/*
+@media only screen and (max-width: 800px) {
+	.sidebar {
+	  position: fixed;
+	  left:0px;
+	  top: -550px;
+	  width: 100%;
+	  height: 550px;
+	  background: #042331;
+	  transition: all .5s ease;
+	  margin-bottom:50px;
+  }
+  .sidebar header {
+    font-size: 20px;
+    color: white;
+    line-height: 70px;
+    text-align: center;
+    background: #17252c;
+  }
+	label #btn{
+	  left: 40px;
+	  top: 25px;
+	  font-size: 35px;
+	  color: white;
+	  padding: 6px 12px;
+	  transition: all .5s;
+	}
+	#check:checked ~ .sidebar{
+	  top: 0;
+	}
+	#check:checked ~ label #btn{
+	  top: 50px;
+	  opacity: 0;
+	  pointer-events: none;
+	}
+	section{
+	  
+	  background-position: center;
+	  background-size: cover;
+    transition: all .5s;
+  }
+  #check:checked ~ section{
+    margin-top: 500px;
+    margin-left: 0px;
+  }
+}
+*/

@@ -1,0 +1,265 @@
+extends layout
+
+block content
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/funciones.js")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+    script(src="https://kit.fontawesome.com/a076d05399.js")
+    div(class="container")
+        center
+            h1 #{title}
+        input(type="checkbox" id="check")
+        label(for="check")
+            i(class="fas fa-bars" id="btn")
+            i(class="fas fa-times" id="cancel")
+        div(class="sidebar")
+            header Funciones
+            ul
+                li
+                    a(href="/")
+                        i(class="fa fa-home")
+                li
+                    a(href="/estudiante/registro")
+                        i(class="fas fa-user-plus")
+                li  
+                    a(href="/estudiante/buscar" )
+                        i(class="fas fa-search")
+                li  
+                    a(href="/estudiante/eliminar")
+                        i(class="fas fa-user-times")
+                li  
+                    a(href="/estudiante/actualizar")
+                        i(class="fas fa-pen-square")
+        hr
+        section
+            ul(class="nav nav-tabs dark" role="tablist" id="tabs_a")
+                li(class="nav-item")
+                    a(class="nav-link active boton" data-toggle="tab" href="#pers") Personales
+                
+                li(class="nav-item")
+                    a(class="nav-link boton" data-toggle="tab" href="#con_dir") Contacto/Direccion
+                
+                li(class="nav-item")
+                    a(class="nav-link boton" data-toggle="tab" href="#acad") Academicos/Medicos
+                li(class="nav-item")
+                    a(class="nav-link boton" data-toggle="tab" href="#tuto") Tutor
+
+        
+            div(class="tab-content")
+                div(id="pers" class="container tab-pane active")
+                    fieldset
+                        legend Datos personales
+                        div(class="row")
+                            div(class="col-md-7")
+                                legend Personales
+                                
+                                div(class="form-group")
+                                    label(for="nombre") Nombre
+                                    input(type="text" class="form-control" id="nombre" placeholder="Escriba su nombre" required)
+                                
+                                div(class="form-group")
+                                    //-label(for="pwd_checador_a") Contraseña:
+                                    //-!--El pattern es para indicar un patron de caracteres [A-Za-z0-9]+ es que debe poner minusculas y mayusculas y nuemeros del 0 al 9 y el (+) es que puede repetir caracteres--
+                                    //-input(type="password" class="form-control" id="pwd_checador_a" placeholder="Escriba su nueva contraseña" minlength="8" pattern="[A-Za-z0-9]+" required) 
+                                    label(for="ap_pat") Apellido paterno
+                                    input(type="text" class="form-control" id="ap_pat" placeholder="Escriba su primer apellido" required)
+
+                                div(class="form-group")
+                                    label(for="ap_mat") Apellido materno
+                                    input(type="text" class="form-control" id="ap_mat" placeholder="Escriba su segundo apellido" required)
+                                
+                            div(class="col-md-5")
+                                
+                                    div(class="form-group")
+                                        label(for="sexo") Sexo
+                                        select(name="sexo" id="sexo")
+                                            option(value="M") Masculino
+                                            option(value="F") Femenino
+                                    div(class="form-group")
+                                        label(for="fecha_n") Fecha de nacimiento
+                                        input(type="date" class="form-control" id="fecha_n" required)
+                                    div(class="form-group")
+                                        label(for="status") Estatus &nbsp;&nbsp;
+                                        select(name="status" id="status")
+                                            option(value="1") Activo
+                                            option(value="0") Inactivo
+                                    div(class="form-group")
+                                        label(for="curp") Curp:
+                                        input(type="text" class="form-control" id="curp" placeholder="Escriba su curp" required)
+                                    div(class="form-group")
+                                        label(for="civil") Estado Civil &nbsp;&nbsp;
+                                        select(name="civil" id="civil")
+                                            option(value="1") Casad@
+                                            option(value="3") Solter@
+                                            option(value="4") Viud@
+                                            option(value="5") Divorsiad@
+                                            option(value="6") Separad@
+                                            option(value="7") Conviviente
+                                
+                                //-div(class="form-group")
+                                //-    label(for="telef_checador_a") Teléfono:
+                                //-    input(type="text" pattern="[0-9]+" minlength="10" class="form-control" id="telef_checador_a" placeholder="Escriba su teléfono" required) 
+                                
+                div(id="con_dir" class="container tab-pane")
+                    fieldset
+                        legend Datos de contacto y direccion
+                        div(class="row")
+                            div(class="col-md-6")
+                                legend Contacto
+                                
+                                div(class="form-group")
+                                    label(for="correo") Email
+                                    input(type="email" class="form-control" id="correo" placeholder="Escriba su email" required)
+                                
+                                div(class="form-group")
+                                    label(for="tel") Teléfono
+                                    input(type="number" class="form-control" id="tel" placeholder="Escriba su numero telefonico" required)
+
+                                div(class="form-group")
+                                    label(for="cel") Número de celular
+                                    input(type="number" class="form-control" id="cel" placeholder="Escriba su numero de celular" required)
+                                hr
+                                legend Direccion
+                                
+                                div(class="form-group")
+                                    label(for="calle") Calle 
+                                    input(type="text" class="form-control" id="calle" required)
+                            div(class="col-md-6")
+                                    div(class="form-group")
+                                        label(for="numero") Número
+                                        input(type="number" class="form-control" id="numero" required)
+                            
+                                    div(class="form-group")
+                                        label(for="municipio") Municipio
+                                        input(type="text" class="form-control" id="municipio" required)
+                                    div(class="form-group")
+                                        label(for="colonia") Colonia
+                                        input(type="text" class="form-control" id="colonia" required)
+                                    div(class="form-group")
+                                        label(for="cp") Código Postal
+                                        input(type="number" class="form-control" id="cp" required)
+                                        
+                                    div(class="form-group")
+                                        label(for="estado") Estado
+                                        input(type="text" class="form-control" id="estado" required)
+                                    div(class="form-group")
+                                        label(for="pais") Pais
+                                        input(type="text" class="form-control" id="pais" required)
+                                        
+                                    //-div(class="form-group")
+                                    //-    label(for="telef_checador_a") Teléfono:
+                                    //-    input(type="text" pattern="[0-9]+" minlength="10" class="form-control" id="telef_checador_a" placeholder="Escriba su teléfono" required) 
+                                    
+                div(id="acad" class="container tab-pane")
+                    fieldset
+                        legend Datos academicos y medicos
+                        div(class="row")
+                            div(class="col-md-7")
+                                legend Academicos
+                                
+                                div(class="form-group")
+                                    label(for="promedio") Promedio
+                                    input(type="number" class="form-control" id="promedio" placeholder="Escriba su promedio" required)
+                                
+                                div(class="form-group")
+                                    label(for="escuela") Escuela de procedencia:
+                                    input(type="text" class="form-control" id="escuela" placeholder="Escriba su escuela de procedencia" required)
+
+                                div(class="form-group")
+                                    label(for="fecha_eg") Fecha de egreso
+                                    input(type="date" class="form-control" id="fecha_eg" placeholder="Escriba su fecha de nacimiento" required)
+                            div(class="col-md-5")
+                                legend Medicos
+                            
+                                div(class="form-group")
+                                    label(for="t_sangre") Tipo de sangre
+                                    input(type="text" class="form-control" id="t_sangre" required)
+                                div(class="form-group")
+                                    label(for="alergia") Alergías &nbsp;&nbsp;
+                                    input(type="text" class="form-control" id="alergia" required)
+                                div(class="form-group")
+                                    label(for="nss") Número del seguro social
+                                    input(type="text" class="form-control" id="nss" required)
+                div(id="tuto" class="container tab-pane")
+                    fieldset
+                        input(type="checkbox"  class="form-check-input" name="check" id="yo" value="1")
+                        label(for="yo" class="form-check-label") Yo soy mi tutor
+                        hr
+                        hr
+                        legend Datos del tutor
+                        div(class="row")
+                            div(class="col-md-6")
+                                legend Contacto
+                                
+                                div(class="form-group")
+                                    label(for="correo2") Email
+                                    input(type="email" class="form-control" id="correo2" placeholder="Escriba su email" required)
+                                
+                                div(class="form-group")
+                                    label(for="tel2") Teléfono
+                                    input(type="number" class="form-control" id="tel2" placeholder="Escriba su numero telefonico" required)
+
+                                div(class="form-group")
+                                    label(for="cel2") Número de celular
+                                    input(type="number" class="form-control" id="cel2" placeholder="Escriba su numero de celular" required)
+                                hr
+                                legend Direccion
+                                
+                                div(class="form-group")
+                                    label(for="calle2") Calle 
+                                    input(type="text" class="form-control" id="calle2" required)
+                                div(class="form-group")
+                                    label(for="numero2") Número
+                                    input(type="number" class="form-control" id="numero2" required)
+                        
+                                div(class="form-group")
+                                    label(for="municipio2") Municipio
+                                    input(type="text" class="form-control" id="municipio2" required)
+                            div(class="col-md-6")
+                                
+                                div(class="form-group")
+                                    label(for="colonia2") Colonia
+                                    input(type="text" class="form-control" id="colonia2" required)
+                                div(class="form-group")
+                                    label(for="cp2") Código Postal
+                                    input(type="number" class="form-control" id="cp2" required)
+                                    
+                                div(class="form-group")
+                                    label(for="estado2") Estado
+                                    input(type="text" class="form-control" id="estado2" required)
+                                div(class="form-group")
+                                    label(for="pais2") Pais
+                                    input(type="text" class="form-control" id="pais2" required)
+                                legend Personales
+                                
+                                div(class="form-group")
+                                    label(for="nombre2") Nombre
+                                    input(type="text" class="form-control" id="nombre2" placeholder="Escriba su nombre" required)
+                                
+                                div(class="form-group")
+                                    //-label(for="pwd_checador_a") Contraseña:
+                                    //-!--El pattern es para indicar un patron de caracteres [A-Za-z0-9]+ es que debe poner minusculas y mayusculas y nuemeros del 0 al 9 y el (+) es que puede repetir caracteres--
+                                    //-input(type="password" class="form-control" id="pwd_checador_a" placeholder="Escriba su nueva contraseña" minlength="8" pattern="[A-Za-z0-9]+" required) 
+                                    label(for="ap_pat2") Apellido paterno
+                                    input(type="text" class="form-control" id="ap_pat2" placeholder="Escriba su primer apellido" required)
+
+                                div(class="form-group")
+                                    label(for="ap_mat2") Apellido materno
+                                    input(type="text" class="form-control" id="ap_mat2" placeholder="Escriba su segundo apellido" required)
+                                div(class="form-group")
+                                    label(for="sexo2") Sexo
+                                    select(name="sexo" id="sexo2")
+                                        option(value="M") Masculino
+                                        option(value="F") Femenino                                    
+        
+            center
+                button(type="button" class="btn btn-outline-success" id="registrar") Aceptar
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                button(type="button" class="btn btn-outline-danger" onclick="location.reload()") Cancelar
+            hr
+            
+       
+                

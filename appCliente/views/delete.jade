@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  script(src="/javascripts/jquery.js")
+  script(src="/javascripts/funciones.js")
+  script(src="https://kit.fontawesome.com/a076d05399.js")
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    
+    
+  div(class="container")
+    hr
+    center
+      h1 #{title}
+    input(type="checkbox" id="check")
+    label(for="check")
+      i(class="fas fa-bars" id="btn")
+      i(class="fas fa-times" id="cancel")
+    div(class="sidebar")
+        header Funciones
+        ul
+          li
+            a(href="/")
+              i(class="fa fa-home")
+          li
+            a(href="/estudiante/registro")
+              i(class="fas fa-user-plus")
+          li  
+            a(href="/estudiante/buscar" )
+              i(class="fas fa-search")
+          li  
+            a(href="/estudiante/eliminar")
+              i(class="fas fa-user-times")
+          li  
+            a(href="/estudiante/actualizar")
+              i(class="fas fa-pen-square")
+    hr
+    section
+      center
+        div(class="row")
+          div(class="col-md-2")
+          div(class="col-md-3")
+            select(id="delOpcion")
+              option(value="1") Por promedio
+              option(value="2") Por ID
+          div(class="col-md-6")
+            div(class="row")
+                div(class="col-md-8")
+                  input(class="form-control" name="datoEliminar" id="datoEliminar" type="number" placeholder="Ingrese dato de estudiante")
+                div(class="col-md-4")
+                  button(class="btn btn-success" id="elimina") Eliminar
+            
+          div(class="col-md-1")
+    br
+  
+        
+    
